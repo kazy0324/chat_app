@@ -4,11 +4,16 @@
   <%= render @messages %>
 </div>
 
-
 <%= form_for @message, remote: true do |f| %>
   <%= f.text_field :content %>
   <%= f.submit %>
 <% end %>
+
+
+<div id="msg">
+
+</div>
+
 
 <!--
 <script>
