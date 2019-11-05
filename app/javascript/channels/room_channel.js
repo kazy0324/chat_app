@@ -5,7 +5,7 @@ consumer.subscriptions.create("RoomChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
     console.log("Connected to the room!");
-    /*$('#msg').append('<div class="message"> ' + data.content + '</div>')*/1
+
   },
 
   disconnected() {
@@ -16,24 +16,21 @@ consumer.subscriptions.create("RoomChannel", {
     // Called when there's incoming data on the websocket for this channel
     console.log("Recieving:")
     console.log(data.content)
-    /*
-    let submit_messages;
-    $(document).on('turbolinks:load', function () {
-      submit_messages()
-    })
-    submit_messages = function () {
-      $('#message_content').on('keydown', function (event) {
-        if (event.keyCode == 13) {
-          $('input').click()
-          event.target.value = ''
-          event.preventDefault()
-        }
-      })
-    }*/
-
+    $('#msg').append('<div class="message"> ' + data.content + '</div>')
   },
 
-  speak: function() {
-    return this.perform('speak');
-  }
 });
+
+let submit_messages;
+$(document).on('turbolinks:load', function () {
+  submit_messages()
+})
+submit_messages = function () {
+  $('#message_content').on('keydown', function (event) {
+    if (event.keyCode == 13) {
+      $('input').click()
+      event.target.value = ''
+      event.preventDefault()
+    }
+  })
+}
