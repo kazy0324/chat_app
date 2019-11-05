@@ -1,8 +1,5 @@
 <h1>Chat room</h1>
 
-<div id="messages">
-  <%= render @messages %>
-</div>
 
 <%= form_for @message, remote: true do |f| %>
   <%= f.text_field :content %>
