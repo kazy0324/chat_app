@@ -8,6 +8,15 @@
 <% end %>
 
 
+<div class="msg_index">
+  <ul id="msg_index">
+    <% @messages.each do |msg| %>
+      <li><%= msg.content %></li>
+    <% end %>
+  </ul>
+
+</div>
+
 <div id="msg">
 
 </div>
