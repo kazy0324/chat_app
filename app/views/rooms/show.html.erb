@@ -3,3 +3,10 @@
 <div id="messages">
   <%= render @messages %>
 </div>
+
+
+<script>
+  $(document).on('turbolinks:load', function () {
+    alert("We made it!");
+  })
+</script>
