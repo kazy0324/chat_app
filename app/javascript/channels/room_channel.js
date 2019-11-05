@@ -4,6 +4,7 @@ consumer.subscriptions.create("RoomChannel", {
 //App.cable.subscriptions.create("RoomChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
+    console.log("Connected to the room!");
   },
 
   disconnected() {
